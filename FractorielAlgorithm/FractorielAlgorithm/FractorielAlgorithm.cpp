@@ -27,7 +27,15 @@ int main()
     LinkedList linkedlist;
     linkedlist.add(3);
     linkedlist.add(123);
-    linkedlist.display(0);
+    linkedlist.insert(6, 0);
+    linkedlist.add(-143);
+    linkedlist.insert(45, 2);
+    linkedlist.bubbleSort();
+    linkedlist.displayList();
+    
+    
+    
+
 }
 
 

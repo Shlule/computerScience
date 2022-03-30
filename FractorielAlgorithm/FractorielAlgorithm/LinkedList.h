@@ -31,6 +31,14 @@ public:
 	//function that display node at nieme index
 	void display(int n);
 
+	//function that display linked list;
+	void displayList();
+
+	//function tha bubble sorting in croissant order
+	void bubbleSort();
+
+	
+
 private:
 	Node* startNode;
 	int size;

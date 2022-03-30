@@ -8,7 +8,7 @@ Node* LinkedList::at(int n) {
 	if (n == 0) {
 		return startNode;
 	}
-	else if (n < size) {
+	else if (n > size) {
 		std::cout << "out of range\n";
 	}
 	else {
@@ -34,12 +34,74 @@ void LinkedList::add(int valueP) {
 }
 
 void LinkedList::insert(int valueP, int n) {
-	Node* temp = new Node(valueP, at(n - 1)->next);
+	if(n ==0){
+		
+		Node* temp = new Node(valueP, startNode);
+		startNode = temp;
+		size++;
+	}
+	else {
+		Node* temp = new Node(valueP, at(n - 1)->next);
+		at(n - 1)->next = temp;
+		size++;
+	}
+	
+	
 
+}
+void LinkedList::remove() {
+	if (size == 0) {
+		std::cout << "linked list is empty nothing to remove\n";
+	}
+	else {
+		Node* temp = at(size - 2)->next;
+		at(size - 2)->next = nullptr;
+		delete at(size-1);
+		size--;
+	}
+}
+
+void LinkedList::remove(int n) {
+	if (size == 0) {
+		std::cout << "linkedList is empty nothing to remove\n";
+	}
+	else if (n == size - 1) {
+		remove();
+	}
+	else {
+		Node* temp = at(n)->next;
+		at(n)->next = nullptr;
+		
+		delete at(n);
+		at(n - 1)->next = temp;
+		size--;
+	}
+}
+void LinkedList::bubbleSort() {
+	int good =0;
+	while (good != size - 1) {
+		good = 0;
+		for (int i = 0; i < size - 1; i++) {
+			if (at(i)->value > at(i + 1)->value) {
+				int temp = at(i)->value;
+				at(i)->value = at(i + 1)->value;
+				at(i + 1)->value = temp;
+			}
+			else {
+				good++;
+			}
+		}
+	}
 }
 
 void LinkedList::display(int n){
 	Node* temp = at(n);
-	std::cout << temp->value << " " << temp->next << "la valeur et l'adresse du noeud\n";
+	std::cout << temp->value << " " << temp->next << " la valeur et l'adresse du noeud\n";
 
+}
+
+void LinkedList::displayList() {
+	for (int i = 0; i <= size - 1; i++) {
+		display(i);
+	}
 }
