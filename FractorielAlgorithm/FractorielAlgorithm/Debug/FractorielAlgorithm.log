@@ -1,4 +1,3 @@
-﻿  FractorielAlgorithm.cpp
-D:\Rogliano_Elouan\computerScience\FractorielAlgorithm\FractorielAlgorithm\FractorielAlgorithm.cpp(20,23): warning C4018: '<' : incompatibilité signed/unsigned
-D:\Rogliano_Elouan\computerScience\FractorielAlgorithm\FractorielAlgorithm\FractorielAlgorithm.cpp(18,10): warning C4101: 'affichage' : variable locale non référencée
-  FractorielAlgorithm.vcxproj -> D:\Rogliano_Elouan\computerScience\FractorielAlgorithm\Debug\FractorielAlgorithm.exe
+﻿  LinkedList.cpp
+C:\SchoolWork\computerScience\FractorielAlgorithm\FractorielAlgorithm\LinkedList.cpp(19): warning C4715: 'LinkedList::at' : les chemins de contrôle ne retournent pas tous une valeur
+  FractorielAlgorithm.vcxproj -> C:\SchoolWork\computerScience\FractorielAlgorithm\Debug\FractorielAlgorithm.exe

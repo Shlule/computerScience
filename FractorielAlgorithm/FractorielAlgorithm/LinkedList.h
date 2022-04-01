@@ -37,6 +37,9 @@ public:
 	//function tha bubble sorting in croissant order
 	void bubbleSort();
 
+	//function that quick sorting the linked list
+	void quicksort();
+
 	
 
 private:

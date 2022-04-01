@@ -68,11 +68,21 @@ void LinkedList::remove(int n) {
 	else if (n == size - 1) {
 		remove();
 	}
+	else if (n == 0) {
+		Node* temp = startNode->next;
+		startNode->next = nullptr;
+		delete startNode;
+		startNode = temp;
+		size--;
+	}
 	else {
+		//je sauvegarde l'adrresse du noeud suivant dans un temporaire
 		Node* temp = at(n)->next;
+		// j'initialise la variable next a nullptre
 		at(n)->next = nullptr;
-		
+		// je supprime le noeud
 		delete at(n);
+		// je relie relie les noeud maintenant adjacent
 		at(n - 1)->next = temp;
 		size--;
 	}
@@ -90,6 +100,17 @@ void LinkedList::bubbleSort() {
 			else {
 				good++;
 			}
+		}
+	}
+}
+
+void LinkedList::quicksort() {
+	Node* pivot = at(size - 1);
+	for (int i = 0; i < size - 2; i++) {
+		if (at(i)->value >= pivot->value) {
+			int temp = at(i)->value;
+			remove(i);
+			add(temp);
 		}
 	}
 }
